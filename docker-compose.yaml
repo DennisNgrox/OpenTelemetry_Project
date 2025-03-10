@@ -1,0 +1,14 @@
+version: '3.7'
+services:
+  app:
+    build:
+      dockerfile: ./Dockerfile
+    ports:
+      - "5000:5000"
+    restart: unless-stopped
+    networks:
+      - local_default
+
+networks:
+  local_default:
+    external: true
