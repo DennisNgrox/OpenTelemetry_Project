@@ -15,6 +15,7 @@ Project:
 
 I am realizing instrumentation the more applications sending your metrics, logs and traces to backends like Grafana-Tempo, Prometheus, Loki, theses datas will be displayed in the granfana-web.
 
+<h1></h1>
 Observation:
 
 I built all the Docker Compose files, configs.yaml, and changed the application code with the purpose of learning about Instrumentation, Collector-OTPL, backends, etc.
