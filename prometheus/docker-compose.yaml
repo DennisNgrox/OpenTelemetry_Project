@@ -1,0 +1,12 @@
+version: '3.7'
+services:
+  prometheus:
+    image: prom/prometheus
+    ports:
+      - "9090:9090"  # Expondo a porta 9090 do Prometheus
+    volumes:
+      - ./prometheus.yaml:/etc/prometheus/prometheus.yml  # Corrigindo o nome do arquivo de configuração
+    command:
+      - "--config.file=/etc/prometheus/prometheus.yml"  # Garantir que o Prometheus use o arquivo correto
+      - "--web.remote-write-receiver.accepted-protobuf-messages"
+    restart: unless-stopped  # Adiciona uma política de reinício
