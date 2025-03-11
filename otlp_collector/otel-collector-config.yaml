@@ -14,6 +14,10 @@ exporters:
     endpoint: "0.0.0.0:8889"  # Expondo métricas para o Prometheus
   debug:
     verbosity: detailed
+  otlp:
+    endpoint: 192.168.15.142:4317
+    tls:
+      insecure: true
 
 service:
   pipelines:
@@ -28,4 +32,4 @@ service:
     traces:
       receivers: [otlp]
       processors: [batch]
-      exporters: [debug]
+      exporters: [debug, otlp]

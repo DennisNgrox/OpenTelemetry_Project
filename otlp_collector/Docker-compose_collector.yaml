@@ -1,19 +1,35 @@
-version: '3.7'
-services:
-  otel-collector:
-    image: otel/opentelemetry-collector
-    ports:
-      - "4317:4317"
-      - "4318:4318"
-      - "8889:8889"
-      - "8888:8888"
-      - "13133:13133"
-    command: ["--config=/etc/otel-collector-config.yaml"]
-    volumes:
-      - /home/vagrant/otpl/otel-collector-config.yaml:/etc/otel-collector-config.yaml 
-    networks:
-      - local_default
+receivers:
+  otlp:
+    protocols:
+      http:
+        endpoint: "0.0.0.0:4318"
+      grpc:
+        endpoint: "0.0.0.0:4317"
 
-networks:
-  local_default:
-    external: true
+processors:
+  batch:
+
+exporters:
+  prometheus:
+    endpoint: "0.0.0.0:8889"  # Expondo métricas para o Prometheus
+  debug:
+    verbosity: detailed
+  otlp:
+    endpoint: 192.168.15.142:4317 # Enviando traces para o Grafana Tempo
+    tls:
+      insecure: true
+
+service:
+  pipelines:
+    logs:
+      receivers: [otlp]
+      processors: [batch]
+      exporters: [debug]
+    metrics:
+      receivers: [otlp]
+      processors: [batch]
+      exporters: [prometheus, debug]  # Exportando métricas para o Prometheus
+    traces:
+      receivers: [otlp]
+      processors: [batch]
+      exporters: [debug, otlp]

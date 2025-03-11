@@ -23,7 +23,6 @@ ADD --chmod=644 https://github.com/open-telemetry/opentelemetry-java-instrumenta
 
 ENV OTEL_TRACES_EXPORTER=otlp
 ENV OTEL_METRICS_EXPORTER=otlp
-ENV OTEL_LOGS_EXPORTER=otlp
 ENV OTEL_EXPORTER_OTLP_ENDPOINT="http://otel-collector:4318"
 
 ENTRYPOINT ["java", "-javaagent:/app/opentelemetry-javaagent.jar", "-jar", "/app/app.jar"]
