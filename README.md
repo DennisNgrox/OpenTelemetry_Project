@@ -1,6 +1,6 @@
 <h1>Project Instrumetation with OpenTelemtry</h1>
 
-![Open Source ❤️](https://img.shields.io/badge/Open%20Source-black) ![Grafana](https://img.shields.io/badge/Grafana-orange) ![otpl](https://img.shields.io/badge/OpenTelemtry-blue)
+![Open Source ❤️](https://img.shields.io/badge/Open%20Source-black) ![Grafana](https://img.shields.io/badge/Grafana-orange) ![otpl](https://img.shields.io/badge/OpenTelemetry-blue)
 
 
 
