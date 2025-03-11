@@ -1,18 +1,3 @@
-version: '3.7'
-services:
-  app:
-    build:
-      dockerfile: ./Dockerfile
-    ports:
-      - "5000:5000"
-    restart: unless-stopped
-    networks:
-      - local_default
-
-networks:
-  local_default:
-    external: true
-[root@pop-os api_python]# cat create_api.py 
 from flask import Flask, jsonify, request
 import json
 import shutil
@@ -105,4 +90,4 @@ def deletar_dado(id):
 
 
 if __name__ == "__main__":
-    app.run(port=5000, host="0.0.0.0"
+    app.run(port=5000, host="0.0.0.0")
