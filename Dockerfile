@@ -27,9 +27,7 @@ EXPOSE 5000
 
 # Set the environment variable for OpenTelemetry logging auto-instrumentation 
 ENV OTEL_PYTHON_LOGGING_AUTO_INSTRUMENTATION_ENABLED=true
-
-ENV OTEL_SERVICE_NAME=python-service
 ENV OTEL_EXPORTER_OTLP_ENDPOINT="http://otel-collector:4317"
-
+ENV OTEL_EXPORTER_OTLP_INSECURE=true
 # Define the command to run the application
-CMD ["opentelemetry-instrument", "python", "create_api.py"]
+CMD ["opentelemetry-instrument", "--service_name", "python-service", "python", "create_api.py"]

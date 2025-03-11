@@ -1,5 +1,5 @@
-opentelemetry-distro==0.50b0
-opentelemetry-exporter-otlp==1.29.0
+opentelemetry-distro==0.51b0
+opentelemetry-exporter-otlp==1.30.0
 blinker==1.6.2
 click==8.1.6
 colorama==0.4.6
