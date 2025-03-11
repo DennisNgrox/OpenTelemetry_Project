@@ -1,6 +1,8 @@
-<h1>Project Instrumetation with OpenTelemtry</h1>
+<h1 align="center">Project Instrumetation with OpenTelemtry</h1>
 
-![Open Source ❤️](https://img.shields.io/badge/Open%20Source-black) ![Grafana](https://img.shields.io/badge/Grafana-orange) ![otpl](https://img.shields.io/badge/OpenTelemetry-blue) ![Project-learning](https://img.shields.io/badge/Learning%20Project-green)
+  
+  ![Open Source ❤️](https://img.shields.io/badge/Open%20Source-black) ![Grafana](https://img.shields.io/badge/Grafana-orange) ![otpl](https://img.shields.io/badge/OpenTelemetry-blue) ![Project-learning](https://img.shields.io/badge/Learning%20Project-green)
+
 
 
 
