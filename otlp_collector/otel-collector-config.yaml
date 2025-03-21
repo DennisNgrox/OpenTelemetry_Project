@@ -15,16 +15,17 @@ exporters:
   debug:
     verbosity: detailed
   otlp:
-    endpoint: 192.168.15.142:4317
+    endpoint: alloy-collector:4317
     tls:
       insecure: true
+
 
 service:
   pipelines:
     logs:
       receivers: [otlp]
       processors: [batch]
-      exporters: [debug]
+      exporters: [debug, otlp]
     metrics:
       receivers: [otlp]
       processors: [batch]

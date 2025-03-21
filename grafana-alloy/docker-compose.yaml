@@ -1,0 +1,15 @@
+version: '3.7'
+services:
+  alloy-collector:
+    build: .  # Instrução para construir a imagem usando o Dockerfile na pasta atual
+    ports:
+      - "12345:12345"
+    volumes:
+      - /home/vagrant/alloy/config.alloy:/etc/alloy/config.alloy
+    networks:
+      - local_default
+    restart: unless-stopped  # Adiciona a política de reinício
+
+networks:
+  local_default:
+    external: true

@@ -1,0 +1,38 @@
+logging {
+  level  = "info"
+  format = "logfmt"
+}
+
+otelcol.receiver.otlp "graf" {
+  grpc {}
+  http {}
+
+  output {
+    logs    = [otelcol.processor.batch.graf.input]
+    traces  = [otelcol.processor.batch.graf.input]
+  }
+}
+
+otelcol.processor.batch "graf" {
+  output {
+    logs    = [otelcol.exporter.otlphttp.logs.input]
+    traces  = [otelcol.exporter.otlp.traces.input]
+  }
+}
+
+// LOKI
+
+otelcol.exporter.otlphttp "logs" {
+  client {
+    endpoint = "http://192.168.15.142:3100/otlp"
+  }
+}
+
+otelcol.exporter.otlp "traces" {
+  client {
+    endpoint = "192.168.15.142:4317"
+    tls {
+        insecure = true
+    }
+  }
+}

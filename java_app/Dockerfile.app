@@ -20,7 +20,7 @@ WORKDIR /app
 COPY --from=build /app/target/user-api-consumer-0.0.1-SNAPSHOT.jar /app/app.jar
 ADD --chmod=644 https://github.com/open-telemetry/opentelemetry-java-instrumentation/releases/latest/download/opentelemetry-javaagent.jar /app/opentelemetry-javaagent.jar
 
-
+ENV OTEL_LOGS_EXPORTER=otlp
 ENV OTEL_TRACES_EXPORTER=otlp
 ENV OTEL_METRICS_EXPORTER=otlp
 ENV OTEL_EXPORTER_OTLP_ENDPOINT="http://otel-collector:4318"
