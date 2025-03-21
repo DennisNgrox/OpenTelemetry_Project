@@ -9,7 +9,7 @@
 This project aims to showcase my knowledge in application instrumentation and data sending to backups
 
 Project:
-![image](![image](https://github.com/user-attachments/assets/753951b3-35f4-4b1f-b50b-82329374fddb)
+![image](https://github.com/user-attachments/assets/753951b3-35f4-4b1f-b50b-82329374fddb)
 
 
 
