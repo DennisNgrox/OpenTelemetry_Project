@@ -24,4 +24,14 @@ Observation:
 I built all the Docker Compose files, configs.yaml, and changed the application code with the purpose of learning about Instrumentation, Collector-OTPL, backends, etc.
 
 
-This is in development...
+
+<h1></h1>
+
+composition of project.
+
+I created two hosts
+
+Host A - Address: 192.168.15.141 - responsible for being the hardware of the applications and collectors
+Host B - Address: 192.168.15.142 - responsible for being the hardware of the backends that will receive the data
+
+
