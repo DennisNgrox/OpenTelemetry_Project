@@ -24,13 +24,13 @@ otelcol.processor.batch "graf" {
 
 otelcol.exporter.otlphttp "logs" {
   client {
-    endpoint = "http://192.168.15.142:3100/otlp"
+    endpoint = "http://192.168.15.142:3100/otlp"   // Address Loki
   }
 }
 
 otelcol.exporter.otlp "traces" {
   client {
-    endpoint = "192.168.15.142:4317"
+    endpoint = "192.168.15.142:4317"   // Address Tempo
     tls {
         insecure = true
     }
